@@ -1,0 +1,86 @@
+name: runworld
+description: A gamified GPS territory-capture fitness app for Bengaluru runners.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Navigation
+  go_router: ^14.8.1
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # HTTP
+  dio: ^5.8.0+1
+
+  # Secure token storage
+  flutter_secure_storage: ^9.2.4
+
+  # User/settings persistence
+  shared_preferences: ^2.5.3
+
+  # Maps (OpenStreetMap — no API key required)
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+
+  # GPS
+  geolocator: ^13.0.2
+  permission_handler: ^11.4.0
+
+  # Step counting
+  pedometer: ^4.0.3
+
+  # Google Sign-In
+  google_sign_in: ^6.2.2
+
+  # Animations
+  flutter_animate: ^4.5.2
+
+  # Charts
+  fl_chart: ^0.71.0
+
+  # Share
+  share_plus: ^10.1.4
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  riverpod_generator: ^2.6.1
+  build_runner: ^2.4.15
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/fonts/
+    - assets/images/
+
+  fonts:
+    - family: BebasNeue
+      fonts:
+        - asset: assets/fonts/BebasNeue-Regular.ttf
+
+    - family: DMSans
+      fonts:
+        - asset: assets/fonts/DMSans-Regular.ttf
+        - asset: assets/fonts/DMSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/DMSans-Bold.ttf
+          weight: 700
+
+    - family: JetBrainsMono
+      fonts:
+        - asset: assets/fonts/JetBrainsMono-Regular.ttf
+        - asset: assets/fonts/JetBrainsMono-Bold.ttf
+          weight: 700
