@@ -5,12 +5,11 @@
 
 ---
 
-## Reference Project
+## Project Structure
 
-**React Native source of truth:** `C:\Users\Ritanjay\Desktop\RunApp`
-- Use it to understand screen layouts, logic, and API shapes
-- Do NOT copy JSX/JS code — translate to Dart/Flutter equivalents
-- Backend at `C:\Users\Ritanjay\Desktop\RunApp\backend` — reused as-is, no changes
+**Flutter app:** `C:\Users\Ritanjay\Desktop\RunWorld\lib\`
+**Backend (Node.js/Express):** `C:\Users\Ritanjay\Desktop\RunWorld\backend\`
+**Legal pages:** `C:\Users\Ritanjay\Desktop\RunWorld\legal\`
 
 **Docs folder:** `C:\Users\Ritanjay\Desktop\RunWorld\docs\`
 - `BACKEND_DOCS.md` — all API endpoints + request/response shapes
@@ -97,12 +96,11 @@
 
 ## Session Start Checklist
 
-Every new session for RunWorld Flutter:
+Every new session for RunWorld:
 1. Read `CLAUDE.md` (this file) for rules
 2. Read `PROGRESS.md` for current phase and last checkpoint
 3. Check the **Daily Progress Log** in PROGRESS.md
-4. Look at the corresponding screen in `C:\Users\Ritanjay\Desktop\RunApp\app\screens\` for reference
-5. Resume exactly from last checkpoint
+4. Resume exactly from last checkpoint
 
 ---
 
@@ -139,7 +137,7 @@ At end of every session, Claude must:
 - Use the XP formula: `XP = (duration_minutes × 10) + (distance_km × 20)`
 - XP leveling: `xp_to_next grows ×1.3 per level` starting at 1000
 - Keep mock data available as fallback when backend unreachable
-- Check RunApp source before making design/logic decisions
+- Backend source is at `backend/` inside this project — check it before making API/logic decisions
 
 ---
 

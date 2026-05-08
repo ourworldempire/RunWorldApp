@@ -1,11 +1,10 @@
 # Backend API Documentation
 
-> Backend source: `C:\Users\Ritanjay\Desktop\RunApp\backend`
-> Base URL (dev): `http://10.0.2.2:5000/api` (Android emulator → localhost)
-> Base URL (device): `http://<your-machine-ip>:5000/api`
+> Backend source: `C:\Users\Ritanjay\Desktop\RunWorld\backend\`
+> Base URL (production): `https://web-production-0de26.up.railway.app/api`
+> Base URL (local dev): `http://10.0.2.2:5000/api` (Android emulator → localhost)
 
-The backend is **reused unchanged** from the React Native RunApp project.
-This document serves as the reference for Flutter service files.
+This document is the reference for all backend API endpoints and Flutter service files.
 
 ---
 

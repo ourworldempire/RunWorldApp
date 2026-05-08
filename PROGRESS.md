@@ -1,7 +1,7 @@
 # RunWorld Flutter — Build Progress
 
-> Reference project: `C:\Users\Ritanjay\Desktop\RunApp` (React Native version)
-> Backend: reused as-is from RunApp, no changes needed
+> Flutter app: `C:\Users\Ritanjay\Desktop\RunWorld\lib\`
+> Backend (Node.js/Express): `C:\Users\Ritanjay\Desktop\RunWorld\backend\`
 
 ---
 

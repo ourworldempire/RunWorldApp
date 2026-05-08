@@ -1,8 +1,8 @@
 # Flutter Frontend Documentation
 
-> Reference React Native screens: `C:\Users\Ritanjay\Desktop\RunApp\app\screens\`
-> Reference components: `C:\Users\Ritanjay\Desktop\RunApp\app\components\`
-> Reference hooks/logic: `C:\Users\Ritanjay\Desktop\RunApp\app\hooks\`
+> Flutter screens: `C:\Users\Ritanjay\Desktop\RunWorld\lib\screens\`
+> Flutter widgets: `C:\Users\Ritanjay\Desktop\RunWorld\lib\widgets\`
+> Flutter services: `C:\Users\Ritanjay\Desktop\RunWorld\lib\services\`
 
 ---
 
