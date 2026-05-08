@@ -19,6 +19,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
   final _emailCtrl = TextEditingController();
   final _passCtrl  = TextEditingController();
   bool _loading = false;
+  bool _googleLoading = false;
   String? _error;
 
   late AnimationController _shakeCtrl;
@@ -53,6 +54,20 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
       return false;
     }
     return true;
+  }
+
+  Future<void> _loginWithGoogle() async {
+    setState(() { _error = null; _googleLoading = true; });
+    try {
+      final user = await AuthService.instance.loginWithGoogle();
+      ref.read(userProvider.notifier).setUser(user);
+      if (mounted) context.go('/home');
+    } catch (e) {
+      setState(() => _error = e.toString().replaceFirst('Exception: ', ''));
+      _shakeCtrl.forward(from: 0);
+    } finally {
+      if (mounted) setState(() => _googleLoading = false);
+    }
   }
 
   Future<void> _login() async {
@@ -113,6 +128,10 @@ class _LoginScreenState extends ConsumerState<LoginScreen>
 
                 const SizedBox(height: AppSpacing.lg),
                 PrimaryButton(label: 'LOGIN', onPressed: _loading ? null : _login, loading: _loading),
+                const SizedBox(height: AppSpacing.lg),
+                _OrDivider(),
+                const SizedBox(height: AppSpacing.lg),
+                _GoogleButton(loading: _googleLoading, onTap: _loginWithGoogle),
                 const SizedBox(height: AppSpacing.xxl),
 
                 Center(
@@ -148,5 +167,45 @@ class _ErrorBox extends StatelessWidget {
       const SizedBox(width: AppSpacing.sm),
       Expanded(child: Text(message, style: AppTextStyles.bodyMD.copyWith(color: AppColors.error))),
     ]),
+  );
+}
+
+class _OrDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) => Row(children: [
+    Expanded(child: Divider(color: Colors.white.withValues(alpha: 0.12))),
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md),
+      child: Text('OR', style: AppTextStyles.bodySM.copyWith(color: AppColors.textMuted, letterSpacing: 2)),
+    ),
+    Expanded(child: Divider(color: Colors.white.withValues(alpha: 0.12))),
+  ]);
+}
+
+class _GoogleButton extends StatelessWidget {
+  final bool loading;
+  final VoidCallback onTap;
+  const _GoogleButton({required this.loading, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) => GestureDetector(
+    onTap: loading ? null : onTap,
+    child: Container(
+      width: double.infinity,
+      height: 52,
+      decoration: BoxDecoration(
+        color: AppColors.secondary,
+        borderRadius: AppRadius.card,
+        border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+      ),
+      alignment: Alignment.center,
+      child: loading
+          ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(strokeWidth: 2, color: AppColors.accent))
+          : Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text('G', style: AppTextStyles.displaySM.copyWith(color: const Color(0xFF4285F4), fontSize: 20)),
+              const SizedBox(width: AppSpacing.sm),
+              Text('Continue with Google', style: AppTextStyles.bodyBold.copyWith(color: AppColors.textLight)),
+            ]),
+    ),
   );
 }
