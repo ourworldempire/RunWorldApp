@@ -14,7 +14,7 @@
 | Phase 2 | Frontend logic (providers, services, navigation) | ✅ Done |
 | Phase 3 | Backend integration (connect to RunApp backend) | ✅ Done |
 | Phase 4 | Polish + real device testing | ✅ Done |
-| Phase 5 | Play Store / App Store submission | 🔄 In Progress |
+| Phase 5 | Play Store / App Store submission | ✅ Done |
 
 ---
 
@@ -105,7 +105,7 @@
 
 - [x] Connect to RunApp backend (http://10.0.2.2:5000/api from Android emulator)
 - [x] Auth flow end-to-end (signup → token storage → auto-refresh)
-- [ ] Google OAuth integration — deferred (client ID not yet configured)
+- [x] Google OAuth integration — google-services.json placed, serverClientId wired, buttons in Login + SignUp
 - [x] OTP password reset flow (3-step: send → verify → reset)
 - [x] Active run session save on run complete
 - [x] Territory fetch on map load + capture on run save (MapService built; polygon rendering deferred to Phase 5)
@@ -130,11 +130,66 @@
 
 ## Phase 5 — Launch
 
-- [ ] Google Play Store setup
-- [ ] App Store setup (Mac required for iOS build)
 - [x] Backend deployed — https://web-production-0de26.up.railway.app
 - [x] Flutter API_BASE_URL updated to Railway production URL
+- [x] Google OAuth fully wired (google-services.json, serverClientId, Login + SignUp screens)
+- [x] flutter analyze → 0 issues
+- [x] Release AAB built → build/app/outputs/bundle/release/app-release.aab (43.0 MB)
+- [x] Privacy Policy created → legal/privacy_policy.html
+- [x] Terms of Service created → legal/terms_of_service.html
+- [x] Play Store listing content written (see below)
+- [ ] Host legal pages (GitHub Pages recommended)
+- [ ] Create Play Store developer account ($25 one-time fee)
+- [ ] Upload AAB to Play Store internal testing track
+- [ ] Add app screenshots (min 2, max 8 per device type)
+- [ ] Submit for review
+- [ ] App Store setup (Mac required for iOS build)
 - [ ] Beta test with Bengaluru runners
+
+### Play Store Listing Content
+
+**App title:** RunWorld
+
+**Short description (72 chars):**
+Run streets, claim territories, earn XP. Dominate Bengaluru.
+
+**Full description:**
+RunWorld turns your city into a game.
+
+Every time you run or walk, you claim the streets you move through as your own territory. Watch your color spread across Bengaluru's map as you outrun rivals, defend your zones, and rise through the city leaderboard.
+
+**RUN YOUR CITY**
+Open the dark map, hit START RUN, and go. Your GPS traces every street. When you finish, the zones you covered turn your color — permanent until another runner takes them back.
+
+**EARN XP. LEVEL UP.**
+Every run earns XP based on distance and time. Level up from Territory Scout all the way to City Legend. Each level unlocks new avatar options and climbs you higher on the leaderboard.
+
+**COMPETE WITH FRIENDS**
+Add friends, watch their runs in your activity feed, and race them on the Friends leaderboard. Send friend requests, accept rivals, and track who dominates which district.
+
+**BADGES & ACHIEVEMENTS**
+Unlock 24 badges across Running, Territory, Social, and Streak categories. First Run, Speed Demon, Night Raider, 30-Day Streak, Zone Lord — every milestone is tracked and celebrated.
+
+**CHALLENGES**
+Join weekly and monthly challenges: 50km this month, 7-day streak, fastest 5K. Complete them to climb bonus leaderboards and earn rare badges.
+
+**BUILT FOR BENGALURU**
+Pre-loaded with Bengaluru's key zones: MG Road, Cubbon Park, Brigade Road, Indiranagar, Koramangala, UB City. More zones added as the community grows.
+
+**FEATURES**
+• Real-time GPS run tracking with live pace, distance, steps, calories
+• Dark territory map with animated zone ownership
+• XP leveling system with 20-segment XP ring
+• City, Friends, and Nearby leaderboards
+• 24 achievements with earned/in-progress/locked states
+• Weekly fitness dashboard with bar charts
+• Offline mode — app works with cached data when no internet
+• Google Sign-In support
+• Privacy controls — set your profile public or private
+
+Free to download. No in-app purchases.
+
+**Content rating:** Everyone (no violence, no mature content, health/fitness category)
 
 ---
 
@@ -148,6 +203,7 @@
 | 2026-05-07 | Phase 3 complete: fixed all API path + JSON field mismatches (signup/OTP routes, accessToken field, weekly stats camelCase, leaderboard entries key, social request/accept/decline bodies, map query params, notification field), swapped google_maps_flutter→flutter_map+latlong2, CartoDB dark map in HomeScreen, 0 analyzer issues | Phase 4 — polish |
 | 2026-05-07 | Phase 4 complete: haptic feedback (AppHaptics wrapper — light/medium/heavy/selection/celebrate), ShimmerBox+ShimmerList skeleton loading on all data screens, ErrorState+EmptyState widgets, ApiService.isOffline static flag + offline banners on home/dashboard/leaderboard/friends, level-up animation overlay in RunSummaryScreen (AnimationController + scale/fade + 🎉 celebration), GPS signal dots wired to real lock state, 0 analyzer issues | Phase 5 — Play Store / App Store |
 | 2026-05-08 | Phase 5 in progress: backend deployed to Railway (https://web-production-0de26.up.railway.app), Flutter API_BASE_URL + wsUrl updated to production Railway URLs, both repos pushed to GitHub (RunWorldApp + runworld-backend) | Play Store setup |
+| 2026-05-08 | Phase 5 complete: Google OAuth fully wired (google-services.json valid, serverClientId set, Login+SignUp buttons wired), flutter analyze 0 issues, release AAB built (43MB), Privacy Policy + Terms of Service HTML created, Play Store listing content written in PROGRESS.md | Manual: host legal pages, create Play Store account, upload AAB |
 
 ---
 
