@@ -1,1 +1,39 @@
-{"installed":{"client_id":"965401713085-80mldjhhg93gvift6vjbhv02c5v1ght2.apps.googleusercontent.com","project_id":"runworld","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs"}}
+{
+  "project_info": {
+    "project_number": "985623239782",
+    "project_id": "runworld-8226d",
+    "storage_bucket": "runworld-8226d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985623239782:android:cf4bab655304172ed7e1a7",
+        "android_client_info": {
+          "package_name": "com.ritanjay.runworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985623239782-7kk6n713ekd9v6udkqpjtcnecuvmg08g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzcs7881zj5BLGFpmEZELJ9bolRflMZ1U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985623239782-7kk6n713ekd9v6udkqpjtcnecuvmg08g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

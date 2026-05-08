@@ -9,7 +9,10 @@ class AuthService {
 
   final _dio = ApiService.instance.dio;
   final _api = ApiService.instance;
-  final _google = GoogleSignIn(scopes: ['email', 'profile']);
+  final _google = GoogleSignIn(
+    scopes: ['email', 'profile'],
+    serverClientId: '985623239782-7kk6n713ekd9v6udkqpjtcnecuvmg08g.apps.googleusercontent.com',
+  );
 
   // ── Sign up ────────────────────────────────────────────────────────────────
 
