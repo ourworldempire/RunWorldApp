@@ -14,7 +14,7 @@
 | Phase 2 | Frontend logic (providers, services, navigation) | ✅ Done |
 | Phase 3 | Backend integration (connect to RunApp backend) | ✅ Done |
 | Phase 4 | Polish + real device testing | ✅ Done |
-| Phase 5 | Play Store / App Store submission | 🔲 Not started |
+| Phase 5 | Play Store / App Store submission | 🔄 In Progress |
 
 ---
 
@@ -132,7 +132,8 @@
 
 - [ ] Google Play Store setup
 - [ ] App Store setup (Mac required for iOS build)
-- [ ] Backend deployed (Railway or Render)
+- [x] Backend deployed — https://web-production-0de26.up.railway.app
+- [x] Flutter API_BASE_URL updated to Railway production URL
 - [ ] Beta test with Bengaluru runners
 
 ---
@@ -146,6 +147,7 @@
 | 2026-05-07 | Phase 2 complete: 7 services (api/auth/fitness/map/leaderboard/social/notifications), RunNotifier with real GPS+pedometer+timer, all auth screens wired, run_summary saves session + applies XP, settings logout wired, dashboard/home/leaderboard/friends load from services with mock fallbacks, 0 analyzer issues | Phase 3 — backend integration |
 | 2026-05-07 | Phase 3 complete: fixed all API path + JSON field mismatches (signup/OTP routes, accessToken field, weekly stats camelCase, leaderboard entries key, social request/accept/decline bodies, map query params, notification field), swapped google_maps_flutter→flutter_map+latlong2, CartoDB dark map in HomeScreen, 0 analyzer issues | Phase 4 — polish |
 | 2026-05-07 | Phase 4 complete: haptic feedback (AppHaptics wrapper — light/medium/heavy/selection/celebrate), ShimmerBox+ShimmerList skeleton loading on all data screens, ErrorState+EmptyState widgets, ApiService.isOffline static flag + offline banners on home/dashboard/leaderboard/friends, level-up animation overlay in RunSummaryScreen (AnimationController + scale/fade + 🎉 celebration), GPS signal dots wired to real lock state, 0 analyzer issues | Phase 5 — Play Store / App Store |
+| 2026-05-08 | Phase 5 in progress: backend deployed to Railway (https://web-production-0de26.up.railway.app), Flutter API_BASE_URL + wsUrl updated to production Railway URLs, both repos pushed to GitHub (RunWorldApp + runworld-backend) | Play Store setup |
 
 ---
 

@@ -5,12 +5,12 @@ class AppConfig {
   // For real device: change to your machine's local IP e.g. http://192.168.1.x:5000/api
   static const String apiBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://10.0.2.2:5000/api',
+    defaultValue: 'https://web-production-0de26.up.railway.app/api',
   );
 
   static const String wsUrl = String.fromEnvironment(
     'WS_URL',
-    defaultValue: 'ws://10.0.2.2:5000',
+    defaultValue: 'wss://web-production-0de26.up.railway.app',
   );
 
   static const String googleClientId = String.fromEnvironment(
